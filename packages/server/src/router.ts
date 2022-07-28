@@ -25,7 +25,7 @@ import { Subscription } from './subscription';
 import { CombinedDataTransformer, DataTransformerOptions } from './transformer';
 import { Prefixer, ThenArg, flatten } from './types';
 
-assertNotBrowser();
+if (typeof window !== 'undefined' && !window.TRPC_ALLOW_BROWSER) assertNotBrowser();
 
 /**
  * @public
